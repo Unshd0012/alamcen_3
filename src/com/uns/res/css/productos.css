@@ -1,0 +1,88 @@
+.root {
+    -fx-background-color: #f0f0f0;
+    -fx-font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.search-bar {
+    -fx-background-color: #ffffff;
+    -fx-padding: 10px;
+    -fx-border-color: #ddd;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+}
+
+.search-field {
+    -fx-font-size: 14px;
+    -fx-padding: 10px;
+    -fx-border-color: #ddd;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-background-color: white;
+    -fx-prompt-text-fill: #888;
+}
+
+.search-button {
+    -fx-background-color: #4CAF50;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-padding: 10px 20px;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.25), 5, 0, 0, 1);
+}
+
+.search-button:hover {
+    -fx-background-color: #45a049;
+}
+
+.product-box {
+    -fx-background-color: white;
+    -fx-padding: 10px;
+    -fx-border-color: #ddd;
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 0, 2);
+    -fx-alignment: center;
+}
+
+.product-box:hover {
+    -fx-background-color: #f9f9f9;
+}
+
+.product-image {
+    -fx-fit-width: 100px;
+    -fx-fit-height: 100px;
+}
+
+.product-description {
+    -fx-text-alignment: center;
+    -fx-font-size: 14px;
+    -fx-padding: 5px 0;
+}
+
+.product-price {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333;
+    -fx-padding: 5px 0;
+}
+
+.product-buttons {
+    -fx-alignment: center;
+    -fx-spacing: 10px;
+}
+
+.product-button {
+    -fx-background-color: #4CAF50;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-padding: 5px 10px;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-cursor: hand;
+}
+
+.product-button:hover {
+    -fx-background-color: #45a049;
+}

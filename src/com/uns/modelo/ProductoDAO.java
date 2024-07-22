@@ -107,4 +107,33 @@ public class ProductoDAO {
             System.out.println("Error al eliminar producto: " + e.getMessage());
         }
     }
+    
+  public List<Producto> obtenerProductosPorDescripcion(String descripcion) {
+    String sql = "SELECT * FROM productos WHERE descripcion LIKE ?";
+    List<Producto> productos = new ArrayList<>();
+
+    try (Connection conn = Conexion.getInstance().getConnection();
+         PreparedStatement pstmt = conn.prepareStatement(sql)) {
+        
+        pstmt.setString(1, "%" + descripcion + "%");
+        ResultSet rs = pstmt.executeQuery();
+
+        while (rs.next()) {
+            Producto producto = new Producto(
+                rs.getInt("id"),
+                rs.getString("codigo"),
+                rs.getString("nombre"),
+                rs.getString("descripcion"),
+                rs.getDouble("precio")
+            );
+            productos.add(producto);
+        }
+    } catch (SQLException e) {
+        System.out.println("Error al obtener productos: " + e.getMessage());
+    }
+
+    return productos;
+}
+
+
 }
