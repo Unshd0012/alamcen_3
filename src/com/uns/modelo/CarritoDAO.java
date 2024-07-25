@@ -107,4 +107,61 @@ public class CarritoDAO {
             System.out.println("Error al eliminar carrito: " + e.getMessage());
         }
     }
+    
+    public List<Carrito> obtenerTodosLosItemsDelCarrito() {
+    String sql = "SELECT * FROM carrito";
+    List<Carrito> itemsCarrito = new ArrayList<>();
+
+    try (Connection conn = Conexion.getInstance().getConnection();
+         Statement stmt = conn.createStatement();
+         ResultSet rs = stmt.executeQuery(sql)) {
+
+        while (rs.next()) {
+            Carrito item = new Carrito(
+                rs.getInt("id"),
+                rs.getInt("id_orden"),
+                rs.getInt("id_producto"),
+                rs.getInt("cantidad"),
+                rs.getInt("id_usuario")
+            );
+            itemsCarrito.add(item);
+        }
+    } catch (SQLException e) {
+        System.out.println("Error al obtener items del carrito: " + e.getMessage());
+    }
+
+    return itemsCarrito;
+}
+
+public void actualizarItemDelCarrito(Carrito item) {
+    String sql = "UPDATE carrito SET cantidad = ? WHERE id = ?";
+
+    try (Connection conn = Conexion.getInstance().getConnection();
+         PreparedStatement pstmt = conn.prepareStatement(sql)) {
+        
+        pstmt.setInt(1, item.getCantidad());
+        pstmt.setInt(2, item.getId());
+        pstmt.executeUpdate();
+    } catch (SQLException e) {
+        System.out.println("Error al actualizar item del carrito: " + e.getMessage());
+    }
+}
+
+public void crearItemDelCarrito(Carrito item) {
+    String sql = "INSERT INTO carrito (id_orden, id_producto, cantidad, id_usuario) VALUES (?, ?, ?, ?)";
+
+    try (Connection conn = Conexion.getInstance().getConnection();
+         PreparedStatement pstmt = conn.prepareStatement(sql)) {
+        
+        pstmt.setInt(1, item.getIdOrden());
+        pstmt.setInt(2, item.getIdProducto());
+        pstmt.setInt(3, item.getCantidad());
+        pstmt.setInt(4, item.getIdUsuario());
+        pstmt.executeUpdate();
+    } catch (SQLException e) {
+        System.out.println("Error al crear item del carrito: " + e.getMessage());
+    }
+}
+
+
 }

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.uns.controlador.CarritoController"  spacing="10" alignment="CENTER">
+    <Label text="CART" styleClass="title-label"/>
+    <VBox fx:id="carritoItems" spacing="10">
+        <padding>
+            <Insets top="10" right="10" bottom="10" left="10"/>
+        </padding>
+    </VBox>
+    <Label fx:id="totalLabel" text="TOTAL: $ 0.00" styleClass="total-label"/>
+    <Button text="PAGAR" onAction="#handlePagar" styleClass="pagar-button"/>
+</VBox>

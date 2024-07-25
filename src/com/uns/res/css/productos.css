@@ -21,7 +21,7 @@
     -fx-prompt-text-fill: #888;
 }
 
-.search-button {
+.button {
     -fx-background-color: #4CAF50;
     -fx-text-fill: white;
     -fx-font-size: 14px;

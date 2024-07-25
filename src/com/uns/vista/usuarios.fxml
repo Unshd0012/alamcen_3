@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.uns.controlador.UsuariosController">
+    <top>
+        <HBox alignment="CENTER" spacing="10" BorderPane.alignment="CENTER">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+            <Label text="Gestión de Usuarios" styleClass="title-label"/>
+        </HBox>
+    </top>
+    <center>
+        <TableView fx:id="usuariosTable" styleClass="usuarios-table">
+            <columns>
+                <TableColumn fx:id="idColumn" text="ID"/>
+                <TableColumn fx:id="emailColumn" text="Email"/>
+                <TableColumn fx:id="passwordColumn" text="Password"/>
+                <TableColumn fx:id="tipoColumn" text="Tipo"/>
+            </columns>
+        </TableView>
+    </center>
+    <bottom>
+        <GridPane hgap="10" vgap="10" alignment="CENTER">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+            <Label text="Email:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+            <TextField fx:id="emailField" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+            <Label text="Password:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+            <TextField fx:id="passwordField" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+            <Label text="Tipo:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+            <TextField fx:id="tipoField" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+
+            <Button text="Agregar" onAction="#handleAgregarUsuario" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+            <Button text="Actualizar" onAction="#handleActualizarUsuario" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+            <Button text="Eliminar" onAction="#handleEliminarUsuario" GridPane.columnIndex="2" GridPane.rowIndex="3"/>
+        </GridPane>
+    </bottom>
+</BorderPane>

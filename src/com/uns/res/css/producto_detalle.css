@@ -1,0 +1,37 @@
+.root {
+    -fx-background-color: #f0f0f0;
+    -fx-font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.producto-nombre {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333;
+}
+
+.producto-descripcion {
+    -fx-font-size: 14px;
+    -fx-text-fill: #555;
+    -fx-padding: 0 20px;
+    -fx-text-alignment: center;
+}
+
+.producto-precio {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333;
+}
+
+.add-cart-button {
+    -fx-background-color: #4CAF50;
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-padding: 10px 20px;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-cursor: hand;
+}
+
+.add-cart-button:hover {
+    -fx-background-color: #45a049;
+}

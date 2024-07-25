@@ -40,6 +40,10 @@ public class Main extends Application{
             primaryStage.setScene(scene);
             primaryStage.setTitle("Aplicación JavaFX");
             primaryStage.show();
+            
+            primaryStage.setOnCloseRequest(e->{
+            System.exit(0);
+            });
         } catch (Exception e) {
             e.printStackTrace();
         }
