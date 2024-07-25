@@ -29,6 +29,8 @@ public class ProductoDetalleController {
 
     private Producto producto;
     private CarritoDAO carritoDAO;
+    
+    private Stage stage;
 
     public ProductoDetalleController() {
         carritoDAO = new CarritoDAO();
@@ -41,11 +43,16 @@ public class ProductoDetalleController {
         productoPrecio.setText("$ " + producto.getPrecio());
         productoImagen.setImage(new Image("file:src/com/uns/res/img/box.png"));
     }
+    
+    public void setStage(Stage stage){
+    this.stage = stage;
+    }
 
     @FXML
     private void handleAddCart() {
         Carrito itemCarrito = new Carrito(0, 1, producto.getId(), 1, 1); // ID del usuario a ajustar según sea necesario
         carritoDAO.crearItemDelCarrito(itemCarrito);
-        ((Stage) addCartButton.getScene().getWindow()).close();
+        stage.close();
+        
     }
 }

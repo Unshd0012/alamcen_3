@@ -1,5 +1,5 @@
 .root {
-    -fx-background-color: #f0f0f0;
+    -fx-background-color: #ffffff;
     -fx-font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -19,21 +19,25 @@
     -fx-background-radius: 5px;
     -fx-background-color: white;
     -fx-prompt-text-fill: #888;
+    
+   
+
 }
 
 .button {
-    -fx-background-color: #4CAF50;
-    -fx-text-fill: white;
+    -fx-background-color: #ffffff;
+    -fx-text-fill: black;
     -fx-font-size: 14px;
     -fx-padding: 10px 20px;
     -fx-border-radius: 5px;
     -fx-background-radius: 5px;
     -fx-cursor: hand;
     -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.25), 5, 0, 0, 1);
+    
 }
 
-.search-button:hover {
-    -fx-background-color: #45a049;
+.button:hover {
+    -fx-background-color: #87cbf5;
 }
 
 .product-box {

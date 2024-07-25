@@ -13,6 +13,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import javafx.scene.image.Image;
 
 public class LoginController {
 
@@ -55,11 +56,14 @@ public class LoginController {
             BorderPane root = loader.load();
             
             // Crear la escena
-            Scene scene = new Scene(root, 800, 600);
+            Scene scene = new Scene(root, 800, 800);
+         
             scene.getStylesheets().add(getClass().getResource("/com/uns/res/css/productos.css").toExternalForm());
             
             // Establecer la escena en un nuevo escenario
             Stage stage = new Stage();
+            stage.setMaximized(true);
+            stage.getIcons().add(new Image(getClass().getResourceAsStream("/com/uns/res/img/box.png")));
             stage.setScene(scene);
             stage.setTitle("Productos Disponibles");
             stage.show();

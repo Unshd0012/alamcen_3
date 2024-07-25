@@ -9,7 +9,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 
@@ -48,11 +47,13 @@ public class CarritoController {
             itemBox.setSpacing(10);
             itemBox.getStyleClass().add("carrito-item");
 
-            ImageView productImage = new ImageView(new Image("file:src/com/uns/res/img/product.png"));
+            ImageView productImage = new ImageView(new Image("file:src/com/uns/res/img/box.png"));
             productImage.setFitWidth(50);
             productImage.setFitHeight(50);
 
-            Label productLabel = new Label(producto.getNombre() + " $ " + producto.getPrecio() + " x " + item.getCantidad() + " = $ " + (producto.getPrecio() * item.getCantidad()));
+            Label productLabel = new Label(producto.getNombre() + " $ " + producto.getPrecio());
+            Label quantityLabel = new Label(String.valueOf(item.getCantidad()));
+            Label totalItemLabel = new Label("= $ " + (producto.getPrecio() * item.getCantidad()));
 
             Button menosButton = new Button("-");
             menosButton.setOnAction(e -> {
@@ -70,7 +71,7 @@ public class CarritoController {
                 cargarCarrito();
             });
 
-            itemBox.getChildren().addAll(productImage, productLabel, menosButton, masButton);
+            itemBox.getChildren().addAll(productImage, productLabel, menosButton, quantityLabel, masButton, totalItemLabel);
             carritoItems.getChildren().add(itemBox);
 
             total += producto.getPrecio() * item.getCantidad();
@@ -81,6 +82,9 @@ public class CarritoController {
 
     @FXML
     private void handlePagar() {
-        // Lógica para procesar el pago
+       
+        carritoDAO.eliminarTodosLosItemsDelCarrito();
+
+        cargarCarrito();
     }
 }

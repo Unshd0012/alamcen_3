@@ -5,6 +5,7 @@ import java.sql.Connection;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
@@ -38,7 +39,8 @@ public class Main extends Application{
             // Agregar la hoja de estilos CSS
           // Establecer la escena en el escenario principal
             primaryStage.setScene(scene);
-            primaryStage.setTitle("Aplicación JavaFX");
+            primaryStage.getIcons().add(new Image(getClass().getResourceAsStream("/com/uns/res/img/box.png")));
+            primaryStage.setTitle("Tienda Online");
             primaryStage.show();
             
             primaryStage.setOnCloseRequest(e->{

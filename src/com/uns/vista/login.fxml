@@ -5,21 +5,33 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox fx:id="loginPane" xmlns:fx="http://javafx.com/fxml" fx:controller="com.uns.controlador.LoginController"  spacing="20" alignment="CENTER">
-    <Label text="Welcome to Online Store" styleClass="title-label"/>
-    <GridPane hgap="10" vgap="10" alignment="CENTER">
+<VBox fx:id="loginPane" alignment="CENTER" spacing="20" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/18" fx:controller="com.uns.controlador.LoginController">
+    <Label styleClass="title-label" text="Bienvenido" />
+    <GridPane alignment="CENTER" hgap="10" vgap="10">
         <padding>
-            <Insets top="20" right="20" bottom="20" left="20"/>
+            <Insets bottom="20" left="20" right="20" top="20" />
         </padding>
         
-        <Label text="Email:" GridPane.columnIndex="0" GridPane.rowIndex="0" styleClass="input-label"/>
-        <TextField fx:id="emailField" GridPane.columnIndex="1" GridPane.rowIndex="0" styleClass="input-field"/>
-        <Label text="Password:" GridPane.columnIndex="0" GridPane.rowIndex="1" styleClass="input-label"/>
-        <PasswordField fx:id="passwordField" GridPane.columnIndex="1" GridPane.rowIndex="1" styleClass="input-field"/>
-        <Button text="Login" onAction="#handleLoginButtonAction" GridPane.columnIndex="1" GridPane.rowIndex="2" styleClass="login-button"/>
-        <Label fx:id="errorLabel" GridPane.columnIndex="1" GridPane.rowIndex="3" styleClass="error-label"/>
+        <Label styleClass="input-label" text="Email:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+        <TextField fx:id="emailField" styleClass="input-field" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+        <Label styleClass="input-label" text="Password:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+        <PasswordField fx:id="passwordField" styleClass="input-field" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+        <Button onAction="#handleLoginButtonAction" styleClass="login-button" text="Login" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+        <Label fx:id="errorLabel" styleClass="error-label" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+      <columnConstraints>
+         <ColumnConstraints />
+         <ColumnConstraints />
+      </columnConstraints>
+      <rowConstraints>
+         <RowConstraints />
+         <RowConstraints />
+         <RowConstraints />
+         <RowConstraints />
+      </rowConstraints>
     </GridPane>
 </VBox>

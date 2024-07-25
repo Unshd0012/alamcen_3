@@ -25,6 +25,14 @@ public class ProductosController {
 
     @FXML
     private TextField searchField;
+     @FXML
+    private Button usuariosButton;
+
+    @FXML
+    private Button buscarButton;
+
+    @FXML
+    private Button carritoButton;
 
     @FXML
     private GridPane productosGrid;
@@ -39,6 +47,7 @@ public class ProductosController {
     @FXML
     public void initialize() {
         cargarProductos();
+   
     }
 
     @FXML
@@ -94,6 +103,7 @@ public class ProductosController {
 
             ProductoDetalleController controller = loader.getController();
             controller.setProducto(producto);
+            
 
             Scene scene = new Scene(root, 300, 400);
             scene.getStylesheets().add(getClass().getResource("/com/uns/res/css/producto_detalle.css").toExternalForm());
@@ -101,6 +111,7 @@ public class ProductosController {
             Stage stage = new Stage();
             stage.setScene(scene);
             stage.setTitle("Detalle del Producto");
+            controller.setStage(stage);
             stage.show();
         } catch (IOException e) {
             e.printStackTrace();

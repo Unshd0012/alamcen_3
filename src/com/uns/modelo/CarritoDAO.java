@@ -163,5 +163,18 @@ public void crearItemDelCarrito(Carrito item) {
     }
 }
 
+  public void eliminarTodosLosItemsDelCarrito() {
+        String sql = "DELETE FROM carrito";
+
+        try (Connection conn = Conexion.getInstance().getConnection();
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            
+            pstmt.executeUpdate();
+        } catch (SQLException e) {
+            System.out.println("Error al eliminar items del carrito: " + e.getMessage());
+        }
+    }
+  
+
 
 }
