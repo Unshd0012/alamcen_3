@@ -5,12 +5,10 @@
         <group>
             <file>file:/C:/Users/jesus/Desktop/Proyectos%20personales/Almacen%202/src/com/uns/res/css/productos.css</file>
             <file>file:/C:/Users/jesus/Desktop/Proyectos%20personales/Almacen%202/src/com/uns/controlador/ProductosController.java</file>
-            <file>file:/C:/Users/jesus/Desktop/Proyectos%20personales/Almacen%202/src/com/uns/controlador/LoginController.java</file>
-            <file>file:/C:/Users/jesus/Desktop/Proyectos%20personales/Almacen%202/src/com/uns/vista/login.fxml</file>
-            <file>file:/C:/Users/jesus/Desktop/Proyectos%20personales/Almacen%202/src/com/uns/modelo/UsuarioDAO.java</file>
             <file>file:/C:/Users/jesus/Desktop/Proyectos%20personales/Almacen%202/src/Main.java</file>
+            <file>file:/C:/Users/jesus/Desktop/Proyectos%20personales/Almacen%202/src/com/uns/vista/producto_detalle.fxml</file>
             <file>file:/C:/Users/jesus/Desktop/Proyectos%20personales/Almacen%202/src/com/uns/vista/productos.fxml</file>
-            <file>file:/C:/Users/jesus/Desktop/Proyectos%20personales/Almacen%202/src/com/uns/modelo/ProductoDAO.java</file>
+            <file>file:/C:/Users/jesus/Desktop/Proyectos%20personales/Almacen%202/src/com/uns/controlador/ProductoDetalleController.java</file>
         </group>
     </open-files>
 </project-private>

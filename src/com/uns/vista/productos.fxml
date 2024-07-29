@@ -16,11 +16,7 @@
             <padding>
                 <Insets bottom="10" left="10" right="10" top="10" />
             </padding>
-            <ImageView fx:id="logoImage" fitHeight="50.0" fitWidth="50.0">
-                <image>
-                    <Image url="@/com/uns/res/img/box.png"/>
-                </image>
-            </ImageView>
+           
             <TextField fx:id="searchField" prefHeight="25.0" prefWidth="385.0" promptText="Ingrese Descripción de producto" styleClass="search-field" />
             <Button onAction="#handleBuscarProducto" styleClass="search-button">
                 <graphic>

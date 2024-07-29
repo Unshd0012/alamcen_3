@@ -3,18 +3,15 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.uns.controlador.CarritoController"  spacing="10" alignment="CENTER">
-    <Label text="CART" styleClass="title-label"/>
-    <VBox fx:id="carritoItems" spacing="10">
+<VBox fx:id="vboxCarrito" alignment="CENTER" prefHeight="370.0" prefWidth="670.0" spacing="10" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.uns.controlador.CarritoController">
+    <Label styleClass="title-label" text="CART" />
+    <VBox fx:id="carritoItems" prefHeight="90.0" prefWidth="590.0" spacing="10">
         <padding>
-            <Insets top="10" right="10" bottom="10" left="10"/>
+            <Insets bottom="10" left="10" right="10" top="10" />
         </padding>
     </VBox>
-    <Label fx:id="totalLabel" text="TOTAL: $ 0.00" styleClass="total-label"/>
-    <Button text="PAGAR" onAction="#handlePagar" styleClass="pagar-button"/>
+    <Label fx:id="totalLabel" styleClass="total-label" text="TOTAL: $ 0.00" />
+    <Button onAction="#handlePagar" styleClass="pagar-button" text="PAGAR" />
 </VBox>

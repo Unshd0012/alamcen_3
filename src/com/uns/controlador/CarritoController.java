@@ -21,6 +21,8 @@ public class CarritoController {
 
     @FXML
     private Label totalLabel;
+    
+    @FXML private VBox vboxCarrito;
 
     private CarritoDAO carritoDAO;
     private ProductoDAO productoDAO;
@@ -33,6 +35,8 @@ public class CarritoController {
     @FXML
     public void initialize() {
         cargarCarrito();
+        vboxCarrito.setPrefSize(500, 500);
+        carritoItems.setPrefSize(500,500);
     }
 
     private void cargarCarrito() {

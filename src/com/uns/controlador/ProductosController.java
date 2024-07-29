@@ -19,6 +19,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.util.List;
+import javafx.concurrent.Task;
 import javafx.scene.layout.BorderPane;
 
 public class ProductosController {
@@ -60,9 +61,20 @@ public class ProductosController {
         cargarProductos("");
     }
 
-    private void cargarProductos(String descripcion) {
-        productosGrid.getChildren().clear();
-        List<Producto> productos = productoDAO.obtenerProductosPorDescripcion(descripcion);
+   private void cargarProductos(String descripcion) {
+    productosGrid.getChildren().clear();
+
+    Task<List<Producto>> task = new Task<List<Producto>>() {
+        @Override
+        protected List<Producto> call() throws Exception {
+            
+            return productoDAO.obtenerProductosPorDescripcion(descripcion);
+        }
+    };
+
+   
+    task.setOnSucceeded(e -> {
+        List<Producto> productos = task.getValue();
         int column = 0;
         int row = 0;
 
@@ -71,7 +83,7 @@ public class ProductosController {
             productBox.setSpacing(10);
             productBox.getStyleClass().add("product-box");
 
-            ImageView productImage = new ImageView(new Image("file:src/com/uns/res/img/box.png"));
+            ImageView productImage = new ImageView(new Image("/com/uns/res/img/box.png"));
             productImage.setFitWidth(100);
             productImage.setFitHeight(100);
 
@@ -82,8 +94,12 @@ public class ProductosController {
             productPrice.getStyleClass().add("product-price");
 
             Button viewButton = new Button("Ver");
-            viewButton.getStyleClass().add("product-button");
-            viewButton.setOnAction(e -> handleVerProducto(producto));
+            viewButton.getStyleClass().add("button");
+            ImageView imageIcon = new ImageView(new Image("/com/uns/res/icon/file.png"));
+            imageIcon.setFitWidth(30);
+            imageIcon.setFitHeight(30);
+            viewButton.setGraphic(imageIcon);
+            viewButton.setOnAction(ev -> handleVerProducto(producto));
 
             productBox.getChildren().addAll(productImage, productDescription, productPrice, viewButton);
             productosGrid.add(productBox, column, row);
@@ -94,7 +110,13 @@ public class ProductosController {
                 row++;
             }
         }
-    }
+    });
+
+   
+    Thread thread = new Thread(task);
+    thread.setDaemon(true);
+    thread.start();
+}
 
     private void handleVerProducto(Producto producto) {
         try {
@@ -148,12 +170,12 @@ public class ProductosController {
             CarritoController controller = loader.getController();
            
 
-            Scene scene = new Scene(root, 300, 400);
+            Scene scene = new Scene(root, 500, 500);
             scene.getStylesheets().add(getClass().getResource("/com/uns/res/css/carrito.css").toExternalForm());
 
             Stage stage = new Stage();
             stage.setScene(scene);
-            stage.setTitle("Detalle del Producto");
+            stage.setTitle("Carrito de Compra");
             stage.show();
         } catch (IOException e) {
             e.printStackTrace();
